@@ -1,0 +1,14 @@
+{
+  "name": "verbnet-extractor",
+  "version": "0.0.1",
+  "description": "",
+  "main": "src/main.js",
+  "scripts": {
+  },
+  "author": "Samuel Brian",
+  "license": "ISC",
+  "dependencies": {
+    "mkdirp": "^0.5.1",
+    "xml-parser": "^1.2.0"
+  }
+}
