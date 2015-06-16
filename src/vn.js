@@ -164,8 +164,20 @@ VerbNet.wordsList = function (members) {
   })).sort();
 };
 
+VerbNet.disjunct = function (inA, notInB) {
+  return inA.filter(function(en0) {
+    return !notInB.some(function(en1) { return en1.word === en0.word; });
+  });
+};
+
+VerbNet.intersect = function (a, b) {
+  return a.filter(function(en0) {
+    return b.some(function(en1) { return en1.word === en0.word; });
+  });
+};
+
 VerbNet.log = function (obj, fn) {
-  //console.log(JSON.stringify(obj, null, 2));
+  console.log(JSON.stringify(unique(obj.map(function(el) { return el.className; })), null, 2));
   if (fn) {
     mkdirp.sync(path.dirname(fn));
     fs.writeFileSync(fn, JSON.stringify(VerbNet.wordsList(obj), null, 2), "utf8");
