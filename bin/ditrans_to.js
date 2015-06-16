@@ -2,7 +2,7 @@
 
 var VerbNet = require("../src/vn");
 
-console.log("Guessing 'to'-ditransitive verb use...");
+console.log("Guessing 'to'-ditransitive verbs...");
 
 var vn = new VerbNet();
 var matches = vn.wordsWithAttr(/np.dative.np/i);

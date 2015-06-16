@@ -2,7 +2,7 @@
 
 var VerbNet = require("../src/vn");
 
-console.log("Guessing 'for'-ditransitive verb use...");
+console.log("Guessing 'for'-ditransitive verbs...");
 
 var vn = new VerbNet();
 var matches = vn.wordsWithAttr(/np.beneficiary.np/i);
