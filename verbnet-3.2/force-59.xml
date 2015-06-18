@@ -158,6 +158,36 @@
                 </PRED>
             </SEMANTICS>
         </FRAME>
+        <FRAME>
+            <DESCRIPTION descriptionNumber="8.1" primary="NP V NP S_INF" secondary="NP-TO-INF-OC" xtag="0.1"/>
+            <EXAMPLES>
+                <EXAMPLE>I forced him to come.</EXAMPLE>
+            </EXAMPLES>
+            <SYNTAX>
+                <NP value="Agent">
+                    <SYNRESTRS/>
+                </NP>
+                <VERB/>
+                <NP value="Patient">
+                    <SYNRESTRS/>
+                </NP>
+                <NP value="Result">
+                    <SYNRESTRS>
+                        <SYNRESTR Value="+" type="oc_to_inf"/>
+                    </SYNRESTRS>
+                </NP>
+            </SYNTAX>
+            <SEMANTICS>
+                <PRED value="force">
+                    <ARGS>
+                        <ARG type="Event" value="during(E)"/>
+                        <ARG type="ThemRole" value="Agent"/>
+                        <ARG type="ThemRole" value="Patient"/>
+                        <ARG type="ThemRole" value="Result"/>
+                    </ARGS>
+                </PRED>
+            </SEMANTICS>
+        </FRAME>
     </FRAMES>
     <SUBCLASSES>
         <VNSUBCLASS ID="force-59-1">
@@ -208,36 +238,7 @@
             </MEMBERS>
             <THEMROLES/>
             <FRAMES>
-                <FRAME>
-                    <DESCRIPTION descriptionNumber="8.1" primary="NP V NP S_INF" secondary="NP-TO-INF-OC" xtag="0.1"/>
-                    <EXAMPLES>
-                        <EXAMPLE>I forced him to come.</EXAMPLE>
-                    </EXAMPLES>
-                    <SYNTAX>
-                        <NP value="Agent">
-                            <SYNRESTRS/>
-                        </NP>
-                        <VERB/>
-                        <NP value="Patient">
-                            <SYNRESTRS/>
-                        </NP>
-                        <NP value="Result">
-                            <SYNRESTRS>
-                                <SYNRESTR Value="+" type="oc_to_inf"/>
-                            </SYNRESTRS>
-                        </NP>
-                    </SYNTAX>
-                    <SEMANTICS>
-                        <PRED value="force">
-                            <ARGS>
-                                <ARG type="Event" value="during(E)"/>
-                                <ARG type="ThemRole" value="Agent"/>
-                                <ARG type="ThemRole" value="Patient"/>
-                                <ARG type="ThemRole" value="Result"/>
-                            </ARGS>
-                        </PRED>
-                    </SEMANTICS>
-                </FRAME>
+
             </FRAMES>
             <SUBCLASSES/>
         </VNSUBCLASS>
