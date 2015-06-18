@@ -159,7 +159,7 @@ VerbNet.parentVerbClassMembers = function (entry) {
  * @param members
  */
 VerbNet.wordsList = function (members) {
-  return unique(members.map(function(m) {
+  return VerbNet.unique(members.map(function(m) {
     return m.word;
   })).sort();
 };
@@ -176,14 +176,26 @@ VerbNet.intersect = function (a, b) {
   });
 };
 
+VerbNet.disjunctStrict = function (inA, notInB) {
+  return inA.filter(function(en0) {
+    return !notInB.some(function(en1) { return en1.word === en0.word && (en0.className.startsWith(en1.className) || en1.className.startsWith(en0.className)); });
+  });
+};
+
+VerbNet.intersectStrict = function (a, b) {
+  return a.filter(function(en0) {
+    return b.some(function(en1) { return en1.word === en0.word && (en0.className.startsWith(en1.className) || en1.className.startsWith(en0.className)); });
+  });
+};
+
 VerbNet.log = function (obj, fn) {
-  console.log(JSON.stringify(unique(obj.map(function(el) { return el.className; })), null, 2));
+  console.log(JSON.stringify(VerbNet.unique(obj.map(function(el) { return el.className; })), null, 2));
   if (fn) {
     mkdirp.sync(path.dirname(fn));
     fs.writeFileSync(fn, JSON.stringify(VerbNet.wordsList(obj), null, 2), "utf8");
   }
 };
 
-function unique(array) {
+VerbNet.unique = function(array) {
   return array.filter(function(el,i,a){if(i==a.indexOf(el))return 1;return 0})
-}
+};
