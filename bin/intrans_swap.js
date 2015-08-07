@@ -50,16 +50,16 @@ ambig = ambig.map(VerbNet.parentVerbClassMembers);
 ambig = VerbNet.flatten(ambig);
 
 var matches = VerbNet.intersect(altern, monotrans);
-VerbNet.log(VerbNet.disjunct(matches, ambig), "out/intrans_swap.json");
-VerbNet.log(VerbNet.intersect(matches, ambig), "out/intrans_swap_ambig.json");
+VerbNet.log(VerbNet.disjunct(matches, ambig), "words/intrans_swap.json");
+VerbNet.log(VerbNet.intersect(matches, ambig), "words/intrans_swap_ambig.json");
 
 
-//VerbNet.log(VerbNet.disjunct(matches, amb), "out/intrans_swap.json");
-//VerbNet.log(VerbNet.intersect(matches, amb), "out/intrans_swap_ambig.json");
+//VerbNet.log(VerbNet.disjunct(matches, amb), "words/intrans_swap.json");
+//VerbNet.log(VerbNet.intersect(matches, amb), "words/intrans_swap_ambig.json");
 //
 //console.log(VerbNet.intersect(amb, matches));
 
 console.log("Complete.");
 
 
-//VerbNet.log(matches, "out/intrans_swap0.json");
+//VerbNet.log(matches, "words/intrans_swap0.json");

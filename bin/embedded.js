@@ -19,19 +19,19 @@ var vn = new VerbNet();
   "NP V what S"
 ].forEach(function(str) {
   var matches = vn.wordsWithAttr(new RegExp(str, "i"));
-  VerbNet.log(matches, "out/" + str.replace(/ /g, "_") + ".json");
+  VerbNet.log(matches, "words/" + str.replace(/ /g, "_").replace(/"/g, "") + ".json");
 });
 
 var matches = vn.wordsWithAttr(/"(np v np\.recipient)|(np v pp.recipient)"/i);
-VerbNet.log(matches, "out/embed_strong.json");
+VerbNet.log(matches, "words/embed_strong.json");
 
 var a = vn.wordsWithAttr(/"np v np"/i), b = vn.wordsWithAttr(/"(np v np\.recipient)|(np v pp.recipient)"/i);
-VerbNet.log(VerbNet.intersect(a, b), "out/embed_ditran_to.json");
+VerbNet.log(VerbNet.intersect(a, b), "words/embed_ditran_to.json");
 
 var a = vn.wordsWithAttr(/np v s/i), b = vn.wordsWithAttr(/np v that s/i);
-VerbNet.log(VerbNet.disjunct(a, b), "out/embed_imp.json");
+VerbNet.log(VerbNet.disjunct(a, b), "words/embed_imp.json");
 
 //var mono = vn.wordsWithAttr(/"np v np"/i), all = vn.wordsWithAttr(/np v/i);
-//VerbNet.log(VerbNet.disjunct(all, mono), "out/embed_not_mono.json");
+//VerbNet.log(VerbNet.disjunct(all, mono), "words/embed_not_mono.json");
 
 console.log("Complete.");
